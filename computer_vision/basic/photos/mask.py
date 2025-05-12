@@ -1,21 +1,21 @@
 import cv2
 import numpy as np
-
 # Placeholder function for trackbars
 def sapkota(x):
     pass
 
 # Open the video file
-cap = cv2.VideoCapture(r'C:\\Users\\Kantipur\\Desktop\\New folder\\photos\\video\\video1.mp4')
+cap =cv2.VideoCapture(r'C:\\Users\\Kantipur\\Desktop\\New folder\\computer_vision\\basic\\sources\\videos\\video1.mp4')
+
 
 # Create a window with trackbars for HSV range selection
 cv2.namedWindow("uhh see this")
-cv2.createTrackbar('lb', "uhh see this", 0, 255, sapkota)
-cv2.createTrackbar('lg', "uhh see this", 0, 255, sapkota)
-cv2.createTrackbar('lr', "uhh see this", 0, 255, sapkota)
-cv2.createTrackbar('ub', "uhh see this", 0, 255, sapkota)
-cv2.createTrackbar('ug', "uhh see this", 0, 255, sapkota)
-cv2.createTrackbar('ur', "uhh see this", 0, 255, sapkota)
+cv2.createTrackbar('lb', "uhh see this", 0, 200, sapkota)
+cv2.createTrackbar('lg', "uhh see this", 0, 200, sapkota)
+cv2.createTrackbar('lr', "uhh see this", 0, 200, sapkota)
+cv2.createTrackbar('ub', "uhh see this", 0, 250, sapkota)
+cv2.createTrackbar('ug', "uhh see this", 0, 250, sapkota)
+cv2.createTrackbar('ur', "uhh see this", 0, 250, sapkota)
 
 while True:
     ret, frame = cap.read()  # Read a frame from the video
@@ -24,6 +24,8 @@ while True:
         hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)  # Convert the image to HSV
 
         # Get the values from the trackbars
+        ''' HSV COLOR HUE SATURATION VALUE lg->Green,
+        lb-> Blue,lr->Red, ub-> Color Range for Blue, ur-> Color Range for Red, ug-> Color Range for BluGreen'''
         LB = cv2.getTrackbarPos('lb', "uhh see this")
         LG = cv2.getTrackbarPos('lg', "uhh see this")
         LR = cv2.getTrackbarPos('lr', "uhh see this")

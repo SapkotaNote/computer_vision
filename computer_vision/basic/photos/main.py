@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-img = cv2.imread(r'C:\\Users\\Kantipur\\Desktop\\New folder\\photos\\photos\\img3.jpg')
+img = cv2.imread(r'C:\\Users\\Kantipur\\Desktop\\New folder\\computer_vision\\basic\\sources\\images\\img3.jpg')
 if img is None:
     print("recheck image link!")
 else:
@@ -77,8 +77,22 @@ else:
     # h = np.hstack((image,image))
     # cv2.imwrite('save_image.jpg',h)
     #------------------------------------------------------------------
+    #MAKE BORDER
+    # new_img = cv2.copyMakeBorder(img,20,20,20,20, cv2.BORDER_CONSTANT, None, value = 2)
+    #------------------------------------------------------------------
+    # 22. VIDEO MOTION
+    # cap = cv2.VideoCapture(r'C:\\Users\\Kantipur\\Desktop\\New folder\\computer_vision\\basic\\sources\\videos\\video.mp4')
 
-
-cv2.imshow('This is windows', )
+    # while cap.isOpened():
+    #     rate, frame = cap.read()
+    #     if rate == True:
+    #         cv2.imshow('VIDEO FRAME', frame)
+    #         if cv2.waitKey(30) & 0xff == ord('p'): # ---> 30 IS FPS (FRAME PER SECOND)
+    #             break
+    #     else:
+    #         break
+    #------------------------------------------------------------------
+    # 24.IMAGE PYRAMID .....
+# cv2.imshow('This is windows', new_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
